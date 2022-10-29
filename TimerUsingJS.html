@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: right;
+  font-size: 20px;
+  margin-top: 0px;
+}
+.first{
+    border-radius: 10px;
+    box-shadow: 2px;
+    width: 95%;
+  padding: 20px;
+  border: 2px solid rgb(190, 116, 116);
+  margin-left: 10px;
+}
+</style>
+</head>
+<body bgcolor="pink">
+
+<h1 style="text-align: center;">EVENT FORM</h1>
+<form class="first">
+    hello
+    <p>Days Remaining to Register</p>
+    <p id="demo"></p>
+</form>
+
+<script>
+var countDownDate = new Date("Jan 15, 2023 15:37:25").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<p style="font-size:48px;"> &#128512; </p>
+
+<button style="margin: 20px 650px; border-radius: 20px; padding: 10px 10px; size: 30px; color: blueviolet;
+          font-weight: bold;
+          background-color: #3DD1E7;
+            border: 0 solid #E5E7EB;
+            box-sizing: border-box;
+            display: flex;
+            font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            "><a href="#"> <p style="font-size:48px;"> &#128512; </p> Register</a></button>
+</body>
+</html>
